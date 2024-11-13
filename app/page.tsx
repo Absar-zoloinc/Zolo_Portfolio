@@ -1,100 +1,98 @@
+import ButtonAnimatedGradient from "@/components/button";
+import TopBar from "@/components/icons/topBar";
+import ZIcon from "@/components/icons/zLogo";
 import Image from "next/image";
+import { BsLinkedin, BsFacebook } from "react-icons/bs";
+import { IoMail } from "react-icons/io5";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="bg-black w-screen h-screen overflow-hidden flex items-center justify-center relative">
+      {/* Glassmorphic background */}
+      <div className="absolute top-0 left-0 h-screen w-screen z-10 bg-black bg-opacity-80 backdrop-filter backdrop-blur-md"></div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+      {/* Gradient overlay */}
+      <div className="absolute top-0 left-0 z-20 opacity-15 w-screen h-screen bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#9073F2] to-[#00000000]"></div>
+
+      {/* Gradient overlay */}
+      <div className="absolute -top-[50%] md:-top-[62%] left-0 z-20 opacity-10 w-screen h-screen bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-cyan-400 via-[#00000000] to-[#00000000]"></div>
+
+      {/* Logo watermark */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-gray-700 opacity-80">
+        <ZIcon
+          parentClassName="w-[400px] h-[406px] md:w-[700px] md:h-[708px]"
+          width={700}
+          height={708}
+        />
+      </div>
+
+      {/* Top bar design */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 z-50 flex justify-center items-start text-white h-12 md:h-20 w-2/12 lg:w-[400px]">
+        <div className="relative">
+          <TopBar
+            className="text-black/30"
+            parentClassName="w-[360px] md:w-[480px] h-[60px] md:h-[80px]"
+            width={480}
+            height={80}
+          />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[60]">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/images/zolo-inc-logo.png"
+              alt="Zolo Inc Logo"
+              className="w-[140px] h-[28px] md:w-[240px] md:h-[48px]"
+              width={240}
+              height={32}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
         </div>
+      </div>
+
+      <main className="flex flex-col items-center justify-center z-30 px-5 text-white text-md md:text-xl text-center pb-20 md:pb-0">
+        <Image
+          className="mb-4"
+          src="/images/animated_fire.png"
+          alt="Animated Fire"
+          width={100}
+          height={100}
+        />
+        <p className="mb-2 md:mb-4">WE&apos;RE STILL</p>
+        {/* <p className="mb-12 text-6xl">Cooking Our Website</p> */}
+        <p className="mb-5 md:mb-9 text-[28px] md:text-7xl font-black leading-snug text-transparent bg-clip-text bg-gradient-to-r from-[#439cfb] to-[#f187fb]">
+          Cooking Our Website
+        </p>
+        <p className="mb-2 md:mb-5 text-sm md:text-xl">
+          We are going to launch our website very soon
+        </p>
+        <p className="text-sm md:text-xl">Stay Tuned</p>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      <footer className="absolute bottom-0 left-1/2 -translate-x-1/2 z-50 p-20 flex items-center space-x-5">
+        <ButtonAnimatedGradient
+          className="group"
+          link="https://www.linkedin.com/company/zoloinc/"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+          <BsLinkedin
+            className="text-gray-400 group-hover:text-white transition-colors duration-300"
+            size={20}
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+        </ButtonAnimatedGradient>
+        <ButtonAnimatedGradient
+          className="group"
+          link="https://www.facebook.com/profile.php?id=61568294908346"
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+          <BsFacebook
+            className="text-gray-400 group-hover:text-white transition-colors duration-300"
+            size={20}
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+        </ButtonAnimatedGradient>
+        <ButtonAnimatedGradient
+          className="group"
+          link="mailto:contact@zoloinc.com"
         >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
+          <IoMail
+            className="text-gray-400 group-hover:text-white transition-colors duration-300"
+            size={20}
           />
-          Go to nextjs.org →
-        </a>
+        </ButtonAnimatedGradient>
       </footer>
     </div>
   );
