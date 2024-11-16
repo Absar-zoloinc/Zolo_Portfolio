@@ -56,8 +56,7 @@ export default function Home() {
           height={100}
         />
         <p className="mb-2 md:mb-4">WE&apos;RE STILL</p>
-        {/* <p className="mb-12 text-6xl">Cooking Our Website</p> */}
-        <p className="mb-5 md:mb-9 text-[28px] md:text-7xl font-black leading-snug text-transparent bg-clip-text bg-gradient-to-r from-[#439cfb] to-[#f187fb]">
+        <p className="mb-5 md:mb-9 text-[28px] md:text-7xl font-black !leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#439cfb] to-[#f187fb]">
           Cooking Our Website
         </p>
         <p className="mb-2 md:mb-5 text-sm md:text-xl">
